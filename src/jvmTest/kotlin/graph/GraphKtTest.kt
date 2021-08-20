@@ -52,4 +52,20 @@ internal class GraphKtTest {
 
     }
 
+    @Test
+    fun testTree() {
+        val calcSize: (Int, Int) -> Int = { d: Int, w: Int -> (0..d)
+            .toList()
+            .map {
+                println(it)
+                Math.pow(w.toDouble(), it.toDouble()).toInt()
+            }.sum()
+        }
+
+        val depth = 2
+        val width = 3
+        val tree = generateNTree<Int>(depth, width)
+        assertEquals(calcSize(depth, width), tree.nodes.size)
+    }
+
 }

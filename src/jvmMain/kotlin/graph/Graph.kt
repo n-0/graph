@@ -7,12 +7,24 @@ data class Node<T>(
     val id: Int = Random.nextInt()
 )
 
+fun add(a: Int, b: Int): Int {
+    var tmp = a / 2
+    tmp += b
+    return tmp
+}
+
 data class Edge<T>(
     val from: Node<T>,
     val to: Node<T>,
     var value: T? = null,
     val id: Int = Random.nextInt()
 )
+
+fun String.funnyFunction(): String {
+    return "I'm funny"
+}
+
+
 
 data class Graph<T>(val nodes: MutableList<Node<T>>, val edges: MutableList<Edge<T>>)
 
